@@ -16,6 +16,8 @@ app.all(["/", "/ping", "/status"], (_, res) => {
   return res.status(200).json({ message: "online" });
 });
 
+app.use("/api", require("./api"));
+
 const { SERVER_PORT } = process.env;
 
 app.listen(SERVER_PORT, () => {
